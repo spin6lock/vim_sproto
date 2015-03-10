@@ -12,12 +12,16 @@
 
 syntax case match
 syntax keyword spType       integer string boolean 
-syntax keyword spKeyword    request response
+syntax keyword spKeyword  contained  request response
 syntax keyword spTodo       contained TODO FIXME XXX
 syntax cluster spCommentGrp contains=spTodo
-syntax match   spId     /-\?\<\d\+\>/
+syntax match spOperator /:/ transparent
+syntax match   spId      /-\?\<\d\+\>/
 syntax region  spComment start="//" skip="\\$" end="$" keepend contains=@spCommentGrp
-syntax match   spField   /\s\([a-z]\+\) /
+syntax match   spStruct  /\.[a-zA-Z]\+\s/ contains=spType
+syntax match   spStruct  /*[a-zA-Z]\+/ contains=spType
+syntax match   spStruct  /:\s[a-zA-Z]\+/ contains=spType,spOperator
+syntax match   spField   /\s[a-z]\+ /  contains=spType,spKeyword nextgroup=spStruct
 
 if version >= 508 || !exists("did_proto_syn_inits")
   if version < 508
@@ -33,6 +37,7 @@ if version >= 508 || !exists("did_proto_syn_inits")
   HiLink spId           Number
   HiLink spComment      Comment
   HiLink spField        Identifier
+  HiLink spStruct       Structure
 
   delcommand HiLink
 endif
