@@ -13,3 +13,5 @@ augroup end
 ```
 
 Or just create a new file called ~/.vim/ftdetect/sproto.vim with the previous lines on it.
+
+<img src="http://i3.tietuku.com/9dacb2f4142a67c3.png">
