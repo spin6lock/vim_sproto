@@ -23,8 +23,8 @@ syntax match spOperator /:/ transparent
 syntax match   spId      /-\?\<\d\+\>/
 syntax match spComment   /#.*$/ contains=@spCommentGrp 
 syntax match   spStruct  /\.[a-zA-Z_]\+\s/ contains=spType
-syntax match   spStruct  /*[a-zA-Z_]\+/ contains=spType
-syntax match   spStruct  /:\s[a-zA-Z_]\+/ contains=spType,spOperator,spComment
+syntax match   spStruct  /*[a-zA-Z_.]\+/ contains=spType
+syntax match   spStruct  /:\s[a-zA-Z_.]\+/ contains=spType,spOperator,spComment
 syntax match   spField   /\s[a-z_]\+ /  contains=spType,spKeyword nextgroup=spStruct
 
 hi def link spType         Keyword
