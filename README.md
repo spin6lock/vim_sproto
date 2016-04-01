@@ -17,4 +17,4 @@ Or just create a new file called ~/.vim/ftdetect/sproto.vim with the previous li
 1. git clone https://github.com/spin6lock/vim_sproto
 2. mv vim_sproto ~/.vim/bundle/sproto
 
-<img src="http://i3.tietuku.com/9dacb2f4142a67c3.png">
+![Alt text](vim_sproto_screenshot.png?raw=true "screenshot")
