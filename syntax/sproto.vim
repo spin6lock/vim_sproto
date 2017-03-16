@@ -15,7 +15,7 @@ if exists("b:current_syntax")
 endif
 
 syntax case match
-syntax keyword spType       integer string boolean 
+syntax keyword spType       integer string binary boolean
 syntax keyword spKeyword  contained  request response
 syntax keyword spTodo       contained TODO FIXME XXX
 syntax cluster spCommentGrp contains=spTodo
